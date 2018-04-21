@@ -1,0 +1,86 @@
+<html>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Calculo IMC</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <script>
+      function calcularIMC() {
+        
+        var pesoInput = document.getElementById("peso");
+        var alturaInput = document.getElementById("altura");
+        var peso = pesoInput.value;
+        var altura = alturaInput.value;
+        var calculoIMC = peso/(altura*altura);
+        
+        if(calculoIMC<18.5){
+          alert("Você está abaixo do peso com esse indice: " + calculoIMC);
+        }
+        else if(calculoIMC>=18.5 && calculoIMC<24.9){
+          alert("Você está no peso ideal com esse indice: " + calculoIMC);
+        }
+
+        else if(calculoIMC>=25 && calculoIMC<29.9) {
+          alert("Você está levemente acima do peso com esse indice: " + calculoIMC);
+        }
+        else if(calculoIMC>=29,9 && calculoIMC<34,9) {
+          alert("Você está com obesidade grau 1 com esse indice: " + calculoIMC);
+        }
+        else if(calculoIMC>=34,9 && calculoIMC<39,9) {
+          alert("Você está com obesidade grau 2(severa) com esse indice: " + calculoIMC);
+        }
+        else if (calculoIMC>39,9)
+          alert("Você está com obesidade grau 3(mórbida) com esse indice: " + calculoIMC);
+        }
+
+    </script>
+</head>
+  <body style="margin-top: 15px">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-offset-4 col-md-4">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Calculo IMC</h3>
+            </div>
+            <div class="panel-body">
+              <div class="form-group">
+                
+                <input
+                  id="peso"
+                  type="number"
+                  class="form-control"
+                  placeholder="Peso:">
+                <input
+                  id="altura"
+                  type="number"
+                  class="form-control"
+                  placeholder="Altura:">
+                <p>
+                <label>
+                <input
+                  type="radio"
+                  name="sexo"
+                  value="opção"
+                  id="sexo_0"/>
+                  Masculino</label>
+                <label>
+                <input
+                  type="radio"
+                  name="sexo"
+                  value="opção"
+                  id="sexo_1"/>
+                  Feminino</label>
+              </div>
+              <button
+                type="button"
+                class="btn btn-default"
+                onclick="calcularIMC()">Calcular</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
